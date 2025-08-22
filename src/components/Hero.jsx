@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel, Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/react'
 import {
-  ArrowPathIcon,
+  PuzzlePieceIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
+  Cog8ToothIcon,
+  ArrowTrendingUpIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
@@ -14,35 +12,24 @@ import logo from '../assets/icons/logo.png'
 import { Link } from 'react-router-dom'
 const products = [
   {
-    name: "Analytics API",
-    description: "Google Analytics for traffic and behavior metrics",
+    name: "Presencia Web Profecional",
+    description: "Atrae clientes las 24 horas con tu vitrina digital.",
     href: '/analytics',
-    icon: ChartPieIcon
+    icon: PuzzlePieceIcon
   },
   {
-    name: "Engagement API",
-    description: "Twilio for communication and engagement.",
+    name: "Mantenimiento Web Sin Preocupaciones",
+    description: "Nos encargamos de que todo funcione perfectamente, tú concéntrate en tu negocio.",
     href: "/engagement",
-    icon: CursorArrowRaysIcon
+    icon: Cog8ToothIcon
   },
   {
-    name: "Security API",
-    description: "Stripe security and payments.",
+    name: "Posicionamiento en Google (SEO)",
+    description: "Haz que los turistas te encuentren primero cuando busquen en La Habana o Cuba.",
     href: "/security",
-    icon: FingerPrintIcon
+    icon: ArrowTrendingUpIcon
   },
-  {
-    name: "Integrations API",
-    description: "Integromat for integrations",
-    href: "/integration",
-    icon: SquaresPlusIcon
-  },
-  {
-    name: "Automations API",
-    description: "Zapier for automations",
-    href: "/automation",
-    icon: ArrowPathIcon
-  }
+  
 ];
 
 const company = [
@@ -64,12 +51,11 @@ const company = [
 export function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  return <header className="top-0 z-50 absolute inset-x-0 bg-primary bg-opacity-30">
-      <nav aria-label="Global" className="flex justify-between items-center mx-auto lg:px-8 p-6 max-w-7xl">
+  return <header className="top-0 z-50 absolute inset-x-0 ">
+      <nav aria-label="Global" className="flex fixed justify-between bg-zinc-950 bg-opacity-80 items-center mx-auto lg:px-52 p-6 w-full">
         <div className="flex lg:flex-1">
-          <Link to="/" className="flex -m-1.5 p-1.5">
-            <img alt="" src={logo} className="w-auto h-8" />
-            <span className="mt-1 ml-3 font-extrabold text-white">Home</span>
+          <Link to="/" className="flex text-5xl font-black font-mono gap-0 bg-gradient-to-b from-secondary to-zinc-900 bg-clip-text text-transparent">
+            <span className="">N</span><span>W</span><span>S</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -81,7 +67,7 @@ export function Nav() {
         <PopoverGroup className="lg:flex lg:gap-x-12 hidden">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 font-bold text-l text-text hover:text-secondary transition-colors duration-200 ease-in-out">
-              Products
+              Servicios
               <ChevronDownIcon aria-hidden="true" className="flex-none text-text size-5" />
             </PopoverButton>
 
@@ -118,12 +104,12 @@ export function Nav() {
           </Popover>
 
           <Link to="/prices" className="font-bold text-l text-text hover:text-secondary transition-colors duration-00 ease-in-out">
-            Prices
+            Precios
           </Link>
 
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 font-bold text-l text-text hover:text-secondary transition-colors duration-300 ease-in-out">
-              Company
+              Sobre Nosotros
               <ChevronDownIcon aria-hidden="true" className="flex-none text-text size-5" />
             </PopoverButton>
 
@@ -148,17 +134,10 @@ export function Nav() {
             </PopoverPanel>
           </Popover>
           <Link to="/contact" className="font-bold text-l text-text hover:text-secondary transition-colors duration-00 ease-in-out">
-            Contact
+            Contacto
           </Link>
         </PopoverGroup>
-        <div className="lg:flex lg:flex-1 lg:justify-end gap-2 hidden">
-          <Link to="/login" className="flex justify-center items-center rounded-lg w-20 h-10 font-bold text-sm/6 text-text">
-            Log in
-          </Link>
-          <Link to="/signin" className="flex justify-center items-center bg-secondary rounded-lg w-20 h-10 font-bold text-sm/6 text-white">
-            Sign in
-          </Link>
-        </div>
+        
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="z-10 fixed inset-0" />
@@ -213,14 +192,7 @@ export function Nav() {
                 </div>
 
                 <br />
-                <div className="py-6">
-                  <Link to="/login" className="block hover:bg-gray-50 -mx-3 px-3 py-2.5 rounded-lg font-bold text-base/7 text-text hover:text-secondary">
-                    Log in
-                  </Link>
-                  <Link to="/signin" className="block bg-secondary hover:bg-textH -mx-3 px-3 py-2.5 rounded-lg font-bold text-base/7 text-white">
-                    Sign in
-                  </Link>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -231,12 +203,11 @@ export function Nav() {
 
 
 
-
-
 import home from '../assets/home.png'
 export function Hero() {
-    return <div className="relative bg-primary pt-14 isolate">
-        <svg aria-hidden="true" className="[mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] -z-10 absolute inset-0 hover:stroke-textH size-full stroke-secondary">
+  
+    return <div className="relative bg-zinc-950 flex pt-28 md:pt-32 lg:pt-44 items-center isolate min-h-screen">
+        <svg aria-hidden="true" className="[mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] -z-10 absolute inset-0 hover:stroke-textH w-full h-full stroke-secondary">
           <defs>
             <pattern x="50%" y={-1} id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width={200} height={200} patternUnits="userSpaceOnUse">
               <path d="M100 200V.5M.5 .5H200" fill="none" />
@@ -247,30 +218,36 @@ export function Hero() {
           </svg>
           <rect fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" width="100%" height="100%" strokeWidth={0} />
         </svg>
-        <div className="lg:flex lg:place-items-center lg:gap-x-10 mx-auto lg:px-1 py-20 lg:py-30 sm:p-20 max-w-7xl">
-          <div className="lg:flex-auto mx-auto py-3">
-            <h1 className="mt-10 font-bold text-5xl text-pretty text-secondary sm:text-7xl tracking-tight">
-              Powerful APIs to Supercharge Your Business
-            </h1>
-            <p className="mt-8 font-medium text-lg text-pretty text-text sm:text-xl/8">
-              Integrate our cutting-edge APIs to automate processes,
-              optimize digital marketing strategies, and scale your online
-              presence effortlessly. Perfect for businesses ready to
-              innovate and grow.
-            </p>
-            <div className="flex items-center gap-x-6 mt-10">
-              <Link to="../App.jsx" className="bg-secondary hover:bg-textH shadow-sm px-3.5 py-2.5 rounded-md font-bold text-sm text-white transition-colors duration-150 ease-linear focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-textH">
-                Get started
-              </Link>
-              <Link to="../App.jsx" className="font-bold text-secondary text-sm/6">
-                Explore Our APIs 
-              </Link>
+        
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 w-full">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-8 lg:py-16">
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="text-2xl sm:text-3xl font-bold text-secondary mb-2">
+                Nexus Web Studio
+              </h1>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
+                Atrae Más Clientes Potenciales con una Web Profesional
+              </h2>
+              <p className="text-lg sm:text-xl text-text mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0">
+                Somos especialistas en crear sitios web rápidos, modernos y efectivos para paladares, hostales y negocios cubanos. Optimizamos cada detalle para que tus clientes te encuentren fácilmente, incluso con conexiones limitadas, y conviertan visitas en reservas y ventas.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-6">
+                <Link to="../App.jsx" className="bg-secondary hover:bg-textH shadow-sm px-5 py-3 rounded-md font-bold text-white transition-colors duration-150 ease-linear focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-textH w-full sm:w-auto text-center">
+                  Empieza Hoy
+                </Link>
+                <Link to="../App.jsx" className="font-bold text-secondary hover:text-textH transition-colors duration-150 w-full sm:w-auto text-center">
+                  Explora Nuestras Ofertas
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="">
-            <foreignObject>
-              <img alt="" src={home} className="rounded-2xl" />
-            </foreignObject>
+            
+            <div className="flex-1 flex justify-center lg:justify-end">
+              <img 
+                alt="Nexus Web Studio" 
+                src={home} 
+                className="rounded-2xl max-w-full sm:max-w-md lg:max-w-lg xl:max-w-2xl w-full h-auto shadow-lg" 
+              />
+            </div>
           </div>
         </div>
       </div>;

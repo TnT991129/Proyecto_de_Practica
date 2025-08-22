@@ -12,39 +12,39 @@ const pricing = {
   ],
   tiers: [
     {
-      name: 'Starter',
+      name: 'Presencia Digital',
       id: 'tier-starter',
       href: '#',
       featured: false,
-      description: 'Perfect for startups and small businesses getting started with automation.',
-      price: { monthly: '$29', annually: '$149' },
-      highlights: ['Access to Google Analytics API', 'Basic Twilio SMS/Email integration (Up to 1,000 messages/month)', 'Stripe API for basic payment processing', ' 5 automated workflows via Integromat/Zapier', 'Standard analytics dashboard'],
-    },
-    {
-      name: 'Scale',
-      id: 'tier-scale',
-      href: '#',
-      featured: true,
-      description: 'Designed for scaling businesses that require robust automation and premium support.',
-      price: { monthly: '$199', annually: '$799' },
-      highlights: [
-        'Everything in Growth',
-        'Unlimited Twilio messaging (Fair usage policy applies)',
-        'Full Stripe integration (Custom invoicing, global payments)',
-        'Unlimited workflows via Integromat/Zapier',
-        'Dedicated API support with 24/7 live chat',
-        'Single Sign-On (SSO) integration',
-        'Custom onboarding and strategy sessions'
-      ],
+      description: 'Personas que están comenzando, con presupuesto limitado, pero que necesitan una vitrina básica en internet.',
+      price: { unique: '$100 - $150' },
+      highlights: ['Diseño web estático (5 secciones máx: Inicio, Servicios, Galería, Sobre mí, Contacto).',  'Diseño 100% adaptable (Mobile-First).', 'Hosting incluido por 1 año en servidor básico (o subdominio gratis en vercel.netlify.app).', 'Formulario de contacto que llega a email/WhatsApp.', 'Optimización básica de velocidad.'],
     },
     {
       name: 'Growth',
+      id: 'tier-scale',
+      href: '#',
+      featured: true,
+      description: 'DPaladares, casas particulares, bares. Que ya tienen clientes pero quieren escalar.',
+      price: { unique: '$300 - $500' },
+      highlights: [
+        'Diseño web personalizado y único (HTML/CSS/JS o React) para máx. velocidad.',
+        '7 secciones (Las básicas + Blog/Noticias + Testimonios).',
+        'Hosting Premium internacional incluido por 1 año (ej: Vercel, Netlify, Hostinger).',
+        'Integración con Google Maps + WhatsApp Business.',
+        'SEO Técnico Básico implementado (meta tags, sitemap, optimización).',
+        'Botón de reservas/pedidos destacado.',
+        'Entrega: 3-4 semanas.'
+      ],
+    },
+    {
+      name: 'Enterprise',
       id: 'tier-growth',
       href: '#',
       featured: false,
-      description: 'Ideal for growing teams that need advanced integrations and higher limits.',
-      price: { monthly: '$79', annually: '$399' },
-      highlights: ['Everything in Starter', 'Enhanced Twilio messaging (Up to 10,000 messages/month)', 'Stripe advanced payment features (Subscriptions, Billing)', '20 automated workflows via Integromat/Zapier', 'Priority email support', 'Access to quarterly marketing workshops'],
+      description: 'Hoteles pequeños, restaurantes de lujo, productores que quieren vender online.',
+      price: {unique: '$800 - $1500'},
+      highlights: ['Diseño web a medida y complejo (con animaciones, interacciones).', 'Sistema de Reservas Online integrado (calendario, confirmación).', 'Tienda Online (E-commerce) para venta de productos/servicios.', 'Blog integrado para contenido marketing.', 'SEO Avanzado (Investigación de keywords, estructura optimizada).', 'Panel de administración COMPLETO (CMS como WordPress o Strapi para total control).', "Mantenimiento y Soporte técnico por 3 meses incluido."],
     },
   ],
   sections: [
@@ -114,42 +114,23 @@ function classNames(...classes) {
 }
 
 export default function PriceSec() {
-  const [frequency, setFrequency] = useState(pricing.frequencies[0])
 
   return (
     <div className="bg-white">
       <main>
         <div className="overflow-hidden isolate">
-          <div className="bg-primary py-16 sm:pt-32 lg:pb-0 flow-root">
+          <div className="bg-primary py-16 sm:pt-12 lg:pb-0 flow-root">
             <div className="mx-auto px-6 lg:px-8 max-w-7xl">
               <div className="relative z-10">
                 <h1 className="mx-auto max-w-4xl font-semibold text-5xl text-balance text-center text-white sm:text-6xl tracking-tight">
-                  Pricing that scales with your business
+                  Precios que se adaptan a su negocio
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl font-medium text-center text-gray-400 text-lg text-pretty sm:text-xl/8">
-                  Choose the perfect plan to integrate powerful marketing APIs and automate your workflows. Flexible pricing designed to fit any stage of your business growth.
+                  Cada negocio es único. Desarrollamos soluciones a medida para objetivos específicos, garantizando el mejor retorno de inversión. Contáctanos para un presupuesto personalizado y sin compromiso
                 </p>
-                <div className="flex justify-center mt-16">
-                  <fieldset aria-label="Payment frequency">
-                    <RadioGroup
-                      value={frequency}
-                      onChange={setFrequency}
-                      className="gap-x-1 grid grid-cols-2 bg-white/5 p-1 rounded-full font-semibold text-center text-white text-xs/5"
-                    >
-                      {pricing.frequencies.map((option) => (
-                        <Radio
-                          key={option.value}
-                          value={option}
-                          className="data-[checked]:bg-secondary px-2.5 py-1 rounded-full transition-colors duration-300 cursor-pointer ease-in-out"
-                        >
-                          {option.label}
-                        </Radio>
-                      ))}
-                    </RadioGroup>
-                  </fieldset>
-                </div>
+                {/* Eliminado el selector de frecuencia */}
               </div>
-              <div className="relative gap-y-8 grid grid-cols-1 lg:grid-cols-3 mx-auto lg:mx-0 mt-10 lg:-mb-14 max-w-md lg:max-w-none">
+              <div className="relative  gap-y-8 grid grid-cols-1 lg:grid-cols-3 mx-auto lg:mx-0 mt-10 lg:-mb-14 max-w-md lg:max-w-none">
                 <svg
                   viewBox="0 0 1208 1024"
                   aria-hidden="true"
@@ -165,7 +146,7 @@ export default function PriceSec() {
                 </svg>
                 <div
                   aria-hidden="true"
-                  className="lg:block lg:top-4 lg:bottom-0 lg:absolute lg:inset-x-px hidden lg:bg-gray-800/80 lg:rounded-t-2xl lg:ring-1 lg:ring-white/10"
+                  className="lg:block lg:top-4 z-90  lg:bottom-0 lg:absolute lg:inset-x-px hidden lg:bg-gray-800/80 lg:rounded-t-2xl lg:ring-1 lg:ring-white/10"
                 />
                 {pricing.tiers.map((tier) => (
                   <div
@@ -195,13 +176,16 @@ export default function PriceSec() {
                               'text-4xl font-semibold tracking-tight',
                             )}
                           >
-                            {tier.price[frequency.value]}
+                            {/* Mostrar solo el precio único */}
+                            {typeof tier.price === 'string' || typeof tier.price === 'number'
+                              ? tier.price
+                              : tier.price?.unique || tier.price?.monthly || tier.price?.annually}
                           </p>
                           <div className="text-sm">
                             <p className={tier.featured ? 'text-gray-900' : 'text-white'}>USD</p>
                             <p
                               className={tier.featured ? 'text-gray-500' : 'text-gray-400'}
-                            >{`Billed ${frequency.value}`}</p>
+                            >Pago único</p>
                           </div>
                         </div>
                         <a
@@ -214,7 +198,7 @@ export default function PriceSec() {
                             'rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
                           )}
                         >
-                          Buy this plan
+                          Comprar Plan
                         </a>
                       </div>
                       <div className="mt-8 sm:mt-10 flow-root">
@@ -245,230 +229,6 @@ export default function PriceSec() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-          <div className="relative bg-white lg:pt-14">
-            <div className="mx-auto px-6 lg:px-8 py-24 sm:py-32 max-w-7xl">
-              <section aria-labelledby="mobile-comparison-heading" className="lg:hidden">
-                <h2 id="mobile-comparison-heading" className="sr-only">
-                  Feature comparison
-                </h2>
-
-                <div className="space-y-16 mx-auto max-w-2xl">
-                  {pricing.tiers.map((tier) => (
-                    <div key={tier.id} className="border-gray-900/10 border-t">
-                      <div
-                        className={classNames(
-                          tier.featured ? 'border-secondary' : 'border-transparent',
-                          '-mt-px w-72 border-t-2 pt-10 md:w-80',
-                        )}
-                      >
-                        <h3
-                          className={classNames(
-                            tier.featured ? 'text-secondary' : 'text-gray-900',
-                            'text-sm/6 font-semibold',
-                          )}
-                        >
-                          {tier.name}
-                        </h3>
-                        <p className="mt-1 text-gray-600 text-sm/6">{tier.description}</p>
-                      </div>
-
-                      <div className="space-y-10 mt-10">
-                        {pricing.sections.map((section) => (
-                          <div key={section.name}>
-                            <h4 className="font-semibold text-gray-900 text-sm/6">{section.name}</h4>
-                            <div className="relative mt-6">
-                              <div
-                                aria-hidden="true"
-                                className="sm:block right-0 absolute inset-y-0 hidden bg-white shadow-sm rounded-lg w-1/2"
-                              />
-
-                              <div
-                                className={classNames(
-                                  tier.featured ? 'ring-2 ring-secondary' : 'ring-1 ring-gray-900/10',
-                                  'relative rounded-lg bg-white shadow-sm sm:rounded-none sm:bg-transparent sm:shadow-none sm:ring-0',
-                                )}
-                              >
-                                <dl className="divide-y divide-gray-200 text-sm/6">
-                                  {section.features.map((feature) => (
-                                    <div
-                                      key={feature.name}
-                                      className="flex justify-between items-center sm:grid sm:grid-cols-2 px-4 sm:px-0 py-3"
-                                    >
-                                      <dt className="pr-4 text-primary">{feature.name}</dt>
-                                      <dd className="flex justify-end sm:justify-center items-center sm:px-4">
-                                        {typeof feature.tiers[tier.name] === 'string' ? (
-                                          <span
-                                            className={
-                                              tier.featured ? 'font-semibold text-secondary' : 'text-gray-900'
-                                            }
-                                          >
-                                            {feature.tiers[tier.name]}
-                                          </span>
-                                        ) : (
-                                          <>
-                                            {feature.tiers[tier.name] === true ? (
-                                              <CheckIcon
-                                                aria-hidden="true"
-                                                className="mx-auto text-secondary size-5"
-                                              />
-                                            ) : (
-                                              <XMarkIconMini
-                                                aria-hidden="true"
-                                                className="mx-auto text-secondary size-5"
-                                              />
-                                            )}
-
-                                            <span className="sr-only">
-                                              {feature.tiers[tier.name] === true ? 'Yes' : 'No'}
-                                            </span>
-                                          </>
-                                        )}
-                                      </dd>
-                                    </div>
-                                  ))}
-                                </dl>
-                              </div>
-
-                              <div
-                                aria-hidden="true"
-                                className={classNames(
-                                  tier.featured ? 'ring-2 ring-secondary' : 'ring-1 ring-gray-900/10',
-                                  'pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 rounded-lg sm:block',
-                                )}
-                              />
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section aria-labelledby="comparison-heading" className="lg:block hidden">
-                <h2 id="comparison-heading" className="sr-only">
-                  Feature comparison
-                </h2>
-
-                <div className="before:block gap-x-8 border-gray-900/10 grid grid-cols-4 border-t">
-                  {pricing.tiers.map((tier) => (
-                    <div key={tier.id} aria-hidden="true" className="-mt-px">
-                      <div
-                        className={classNames(
-                          tier.featured ? 'border-secondary' : 'border-transparent',
-                          'border-t-2 pt-10',
-                        )}
-                      >
-                        <p
-                          className={classNames(
-                            tier.featured ? 'text-secondary' : 'text-primary',
-                            'text-sm/6 font-semibold',
-                          )}
-                        >
-                          {tier.name}
-                        </p>
-                        <p className="mt-1 text-gray-600 text-sm/6">{tier.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="space-y-16 -mt-6">
-                  {pricing.sections.map((section) => (
-                    <div key={section.name}>
-                      <h3 className="font-semibold text-gray-900 text-sm/6">{section.name}</h3>
-                      <div className="relative -mx-8 mt-10">
-                        <div
-                          aria-hidden="true"
-                          className="before:block absolute inset-x-8 inset-y-0 gap-x-8 grid grid-cols-4"
-                        >
-                          <div className="bg-white shadow-sm rounded-lg size-full" />
-                          <div className="bg-white shadow-sm rounded-lg size-full" />
-                          <div className="bg-white shadow-sm rounded-lg size-full" />
-                        </div>
-
-                        <table className="relative border-separate border-spacing-x-8 w-full">
-                          <thead>
-                            <tr className="text-left">
-                              <th scope="col">
-                                <span className="sr-only">Feature</span>
-                              </th>
-                              {pricing.tiers.map((tier) => (
-                                <th key={tier.id} scope="col">
-                                  <span className="sr-only">{tier.name} tier</span>
-                                </th>
-                              ))}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {section.features.map((feature, featureIdx) => (
-                              <tr key={feature.name}>
-                                <th
-                                  scope="row"
-                                  className="py-3 pr-4 w-1/4 font-normal text-gray-900 text-left text-sm/6"
-                                >
-                                  {feature.name}
-                                  {featureIdx !== section.features.length - 1 ? (
-                                    <div className="absolute inset-x-8 bg-gray-200 mt-3 h-px" />
-                                  ) : null}
-                                </th>
-                                {pricing.tiers.map((tier) => (
-                                  <td key={tier.id} className="relative px-4 py-0 w-1/4 text-center">
-                                    <span className="relative py-3 size-full">
-                                      {typeof feature.tiers[tier.name] === 'string' ? (
-                                        <span
-                                          className={classNames(
-                                            tier.featured ? 'font-semibold text-secondary' : 'text-gray-900',
-                                            'text-sm/6',
-                                          )}
-                                        >
-                                          {feature.tiers[tier.name]}
-                                        </span>
-                                      ) : (
-                                        <>
-                                          {feature.tiers[tier.name] === true ? (
-                                            <CheckIcon aria-hidden="true" className="mx-auto text-secondary size-5" />
-                                          ) : (
-                                            <XMarkIconMini
-                                              aria-hidden="true"
-                                              className="mx-auto text-gray-400 size-5"
-                                            />
-                                          )}
-
-                                          <span className="sr-only">
-                                            {feature.tiers[tier.name] === true ? 'Yes' : 'No'}
-                                          </span>
-                                        </>
-                                      )}
-                                    </span>
-                                  </td>
-                                ))}
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-
-                        <div
-                          aria-hidden="true"
-                          className="before:block absolute inset-x-8 inset-y-0 gap-x-8 grid grid-cols-4 pointer-events-none"
-                        >
-                          {pricing.tiers.map((tier) => (
-                            <div
-                              key={tier.id}
-                              className={classNames(
-                                tier.featured ? 'ring-2 ring-secondary' : 'ring-1 ring-primary',
-                                'rounded-lg',
-                              )}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
             </div>
           </div>
         </div>
