@@ -1,54 +1,51 @@
 import {
-  SparklesIcon,        // Para primera impresión digital
-  MagnifyingGlassIcon,  // Para competir con Google
-  ChatBubbleLeftRightIcon, // Para atención 24/7
-  Cog6ToothIcon,       // Para digitalizar operación
-  QrCodeIcon,          // Para tarjeta de presentación digital
-  CurrencyDollarIcon   // Para inversión con retorno
-} from '@heroicons/react/24/outline';
-
+  DocumentArrowDownIcon,
+  GlobeAltIcon,
+  AdjustmentsHorizontalIcon,
+  TableCellsIcon,
+  PresentationChartBarIcon,
+  LightBulbIcon
+} from "@heroicons/react/20/solid";
+import BodyApi from '../assets/bodyApi.png';
+import Yo from '../assets/yo.png';
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 const features = [
   {
-    name: "La Primera Impresión es Digital: Ya No Hay Segundas Oportunidades.",
+    name: " Primera Impresión Digital",
     description:
-      "Hoy, un turista conoce su negocio a través de su pantalla antes de pisarlo. Nosotros creamos vitrinas digitales de alta gama que enamoran a primera vista y generan confianza inmediata.",
-    icon: SparklesIcon, // Representa excelencia y calidad premium
-    color: "bg-purple-500"
+      "Tu negocio se juzga primero online. Creamos webs que generan confianza y enamoran a primera vista.",
+    icon: DocumentArrowDownIcon
   },
   {
-    name: "No Estás Compitiendo Solo con el Negocio de al Lado, Estás Compitiendo con Google.",
+    name: "Competencia con Google",
     description:
-      "Si un turista busca 'paladar en La Habana' y usted no aparece en los primeros resultados, es como si no existiera. No se trata solo de tener web, se trata de ser visible y encontrable.",
-    icon: MagnifyingGlassIcon, // Representa búsqueda y visibilidad
-    color: "bg-blue-500"
+      "Si no apareces en las primeras búsquedas, no existes para el turista. La visibilidad online es crucial.",
+    icon: GlobeAltIcon
   },
   {
-    name: "Atiende Consultas 24/7, Sin Necesidad de Estar Pendiente del Teléfono.",
+    name: "Atención 24/7 Automatizada",
     description:
-      "Un sitio web con la información clara (menú, precios, dirección, horarios) y un botón de WhatsApp contesta las preguntas más comunes a cualquier hora del día o de la noche, desde cualquier parte del mundo. Automatiza tu servicio al cliente y captura leads incluso mientras duermes.",
-    icon: ChatBubbleLeftRightIcon, // Representa comunicación y atención
-    color: "bg-green-500"
+      "Tu web responde consultas automáticamente a cualquier hora, capturando clientes incluso mientras duermes.",
+    icon: AdjustmentsHorizontalIcon
   },
   {
-    name: "Digitaliza Tu Operación y Libera Tiempo Para Lo Que Importa: Atender a Tus Clientes.",
+    name: " Digitalización de Operaciones",
     description:
-      "Gestionar reservas, responder las mismas preguntas una y otra vez y actualizar precios en redes sociales consume horas valiosas. Un sitio web profesional automatiza y organiza estas tareas.",
-    icon: Cog6ToothIcon, // Representa automatización y eficiencia
-    color: "bg-orange-500"
+      "Automatiza reservas, consultas y actualizaciones para enfocarte en atender clientes, no en tareas administrativas.",
+    icon: TableCellsIcon
   },
   {
-    name: "Su Tarjeta de Presentación ya No es de Cartón, es un Link.",
+    name: "Tarjeta de Presentación Digital",
     description:
-      "Un sitio web profesional es su mejor herramienta de marketing. Es lo que puede enviar por WhatsApp, poner en su perfil de Instagram o en las tarjetas físicas.",
-    icon: QrCodeIcon, // Representa digitalización y links
-    color: "bg-red-500"
+      "Tu web es tu principal herramienta de marketing: un link profesional que centraliza toda tu información.",
+    icon: PresentationChartBarIcon
   },
   {
-    name: "Es una Inversión, No un Gasto. El Retorno es Tangible.",
+    name: " Inversión Rentable",
     description:
-      "Un sitio web no es un lujo, es una herramienta de negocio. El costo de desarrollo se recupera rápidamente con unas pocas reservas o ventas directas generadas a través de él.",
-    icon: CurrencyDollarIcon, // Representa inversión y retorno financiero
-    color: "bg-emerald-500"
+      "Un sitio web se paga solo con pocas ventas. Es tu empleado de marketing más eficiente: trabaja 24/7 sin descanso.",
+    icon: LightBulbIcon
   }
 ];
 
@@ -58,37 +55,55 @@ export function Comp() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Encabezado */}
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-secondary">
+          <motion.h2 
+          initial={{opacity:0, scale: .7, y:10}}
+          whileInView={{opacity:1, scale: 1, y:0}}
+          transition={{duration:1, ease: "easeIn"}}
+          className="text-base font-semibold leading-7 text-secondary">
             Importancia de Nuestros Servicios
-          </h2>
-          <p className="mt-4 text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+          </motion.h2>
+          <motion.p
+          initial={{opacity:0, scale: .7, y:10}}
+          whileInView={{opacity:1, scale: 1, y:0}}
+          transition={{duration:1, ease: "easeIn", delay:.1}}
+           className=" text-2xl font-bold tracking-tight text-primary sm:text-4xl">
             Si no tienes un sitio web, ¿cómo te encuentran?
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
-            La decisión de visitarte se toma en Google. Si no estás ahí, ya perdiste.
-          </p>
-        </div>
+          </motion.p>
+          <motion.p 
+          initial={{opacity:0, scale: .7, y:10}}
+          whileInView={{opacity:1, scale: 1, y:0}}
+          transition={{duration:1, ease: "easeIn", delay:.13}}
 
-        {/* Grid de características */}
-        <div className="mx-auto mt-16 max-w-7xl sm:mt-20 lg:mt-24">
-          <div className="mx-auto max-w-2xl lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
-              {features.map((feature) => (
-                <div key={feature.name} className="flex flex-col p-8 bg-gray-50 rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-lg border border-gray-100">
-                  <dt className="flex items-center gap-x-4 text-lg font-semibold leading-7 text-primary">
-                    <div className={`flex h-12 w-12 items-center justify-center rounded-lg ${feature.color}`}>
-                      <feature.icon className="h-7 w-7 text-white" aria-hidden="true" />
-                    </div>
-                    {feature.name}
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                    <p className="flex-auto">{feature.description}</p>
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          className="mt-2 text-sm leading-2 text-gray-600 max-w-2xl mx-auto">
+            La decisión de visitarte se toma en Google. Si no estás ahí, ya perdiste.
+          </motion.p>
         </div>
+        {/* Grid de características */}
+        <div className="mx-auto mt-10 max-w-7xl sm:mt-20 lg:mt-24">
+  <div className="mx-auto max-w-2xl lg:max-w-none">
+    <dl className="grid max-w-xl  sm:grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+      {features.map((feature, idx) => (
+        <motion.div 
+          initial={{opacity:0, scale: .9, y:35}}
+          whileInView={{opacity:1, scale: 1, y:0}}
+          transition={{duration:.3, ease: "easeInOut", delay: 0.1 + idx * 0.14}}
+          key={feature.name}
+          className="flex flex-col p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all duration-300 hover:shadow-md"
+        >
+          <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-primary">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
+              <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+            </div>
+            {feature.name}
+          </dt>
+          <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+            <p className="flex-auto">{feature.description}</p>
+          </dd>
+        </motion.div>
+      ))}
+    </dl>
+  </div>
+</div>
       </div>
     </div>
   );
@@ -125,94 +140,114 @@ export function CTASection() {
       </div>
     </div>;
 }
+
+import {  useState } from 'react';
+
 export function LogoClouds() {
-  // Carrusel infinito con scroll automático
   const carouselRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const carousel = carouselRef.current;
+    if (!carousel || isPaused) return;
+
     let animationFrame;
-    let scrollAmount = 1;
+    let scrollAmount = window.innerWidth < 640 ? 0.5 : 1;
 
     function scrollCarousel() {
-      if (carousel) {
+      if (carousel && !isPaused) {
         carousel.scrollLeft += scrollAmount;
-        // Reinicia el scroll para efecto infinito
         if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
           carousel.scrollLeft = 0;
         }
       }
       animationFrame = requestAnimationFrame(scrollCarousel);
     }
+    
     animationFrame = requestAnimationFrame(scrollCarousel);
     return () => cancelAnimationFrame(animationFrame);
-  }, []);
+  }, [isPaused]);
 
-  // Negocios con los que trabajas
   const businessTypes = [
-    {
-      name: "Hostales",
-      icon: "🏨"
-    },
-    {
-      name: "Bares",
-      icon: "🍸"
-    },
-    {
-      name: "Restaurantes",
-      icon: "🍽️"
-    },
-    {
-      name: "Taxistas",
-      icon: "🚕"
-    },
-    {
-      name: "Mipymes",
-      icon: "🏪"
-    },
-    {
-      name: "Galerías de Arte",
-      icon: "🖼️"
-    },
-    {
-      name: "Cafeterías",
-      icon: "☕"
-    },
-    {
-      name: "Artesanos",
-      icon: "🧵"
-    }
+    { name: "Hostales", icon: "🏨", description: "Alojamientos con encanto" },
+    { name: "Bares", icon: "🍸", description: "Ambientes únicos" },
+    { name: "Restaurantes", icon: "🍽️", description: "Gastronomía auténtica" },
+    { name: "Taxistas", icon: "🚕", description: "Transporte confiable" },
+    { name: "Mipymes", icon: "🏪", description: "Negocios locales" },
+    { name: "Galerías", icon: "🖼️", description: "Arte y cultura" },
+    { name: "Cafeterías", icon: "☕", description: "Momento cafetero" },
+    { name: "Artesanos", icon: "🧵", description: "Creaciones únicas" }
   ];
 
-  // Duplica los elementos para efecto infinito
   const items = [...businessTypes, ...businessTypes];
 
   return (
-    <div className="bg-secondary py-24 sm:py-25">
-      <h2 className=" text-center text-5xl font-semibold text-primary mb-20">
-        Trabajamos con todo tipo de negocios
-      </h2>
-      <div
+    <div className="relative bg-zinc-950 flex flex-col pt-20 sm:pt-28 md:pt-32 lg:pt-44 overflow-hidden items-center isolate">
+      <svg aria-hidden="true" className="[mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] -z-10 absolute inset-0 hover:stroke-textH w-full h-full stroke-secondary">
+          <defs>
+            <pattern x="50%" y={-1} id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width={200} height={200} patternUnits="userSpaceOnUse">
+              <path d="M100 200V.5M.5 .5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="transition-color duration-300 ease-linear overflow-visible fill-secondary hover:fill-white">
+            <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" strokeWidth={0} />
+          </svg>
+          <rect fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" width="100%" height="100%" strokeWidth={0} />
+        </svg>
+      {/* Encabezado */}
+      <div className="text-center mb-10 sm:mb-12 lg:mb-16 px-6">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white">
+          Trabajamos con todo tipo de negocios
+        </h2>
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
+          Especialistas en potenciar negocios con soluciones digitales a medida
+        </p>
+      </div>
+
+      {/* Carrusel */}
+      <div 
         ref={carouselRef}
-        className="overflow-x-hidden whitespace-nowrap"
-        style={{ width: "100%", maxWidth:1600, margin: "0 auto" }}
+        className="overflow-hidden w-full py-4 relative"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
       >
-        <div className="inline-flex" style={{ minWidth: "max-content" }}>
+        <div 
+          className="flex w-max"
+          style={{ animation: `scroll 120s linear infinite`, animationPlayState: isPaused ? 'paused' : 'running' }}
+        >
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center justify-center mx-8 min-w-[180px]"
+              className="group flex flex-col items-center justify-center mx-2 sm:mx-4 min-w-[clamp(140px,20vw,200px)] p-4 sm:p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-zinc-950 hover:border-secondary transition-all duration-300 hover:scale-105 hover:bg-gray-800/70"
             >
-              <span className="text-6xl mb-4">{item.icon}</span>
-              <span className="font-semibold text-xl text-primary">{item.name}</span>
+              <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                {item.icon}
+              </div>
+              <h3 className="font-semibold text-sm sm:text-lg text-white text-center mb-1">
+                {item.name}
+              </h3>
+              <p className="text-xs sm:text-sm text-secondary text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Animación */}
+      <style>
+        {`
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50%)); }
+          }
+        `}
+      </style>
     </div>
   );
 }
-
 const people = [
   {
     name: "Osmel Rubido",
@@ -226,16 +261,16 @@ const people = [
 ];
 
 export function OurTeam() {
-  return <div className="bg-primary py-24 sm:py-32">
+  return <div className="bg-primary py-28 sm:py-32">
       <div className="mx-auto px-6 lg:px-8 max-w-7xl text-center">
         <div className="mx-auto max-w-6xl">
-          <h2 className="font-semibold text-4xl text-balance text-secondary sm:text-5xl tracking-tight">
+          <h2 className="font-semibold text-2xl text-balance text-secondary sm:text-5xl tracking-tight">
             Conozca a nuestro equipo
           </h2>
-          <p className="mt-6 text-lg/8 text-text">
+          <p className="mt-3 text-lg/8 text-text">
             <strong>Las mentes detrás del exito del negocio</strong>
           </p>
-          <p className="mt-2 text-lg/8 text-text">
+          <p className="mt-2 text-md text-left text-text">
             Detrás de Nexus Web Studio hay una pasión inquebrantable por el diseño web y un profundo entendimiento del mercado turístico cubano. No somos una gran corporación impersonal; somos un equipo especializado que combina expertise técnico de vanguardia con una mentalidad estratégica.
 
 Trabajamos con una red de colaboradores (diseñadores y especialistas en marketing digital) para ofrecer una solución integral. Esta flexibilidad nos permite reunir el talento ideal para cada proyecto, garantizando resultados excepcionales sin la burocracia de una gran agencia.
@@ -305,100 +340,142 @@ Nuestra visión es clara: utilizar la innovación adaptada para superar los desa
     </div>;
 }
 export function OurMision() {
-  return <div className="bg-white py-24 sm:py-32 overflow-hidden">
-      <div className="mx-auto px-6 lg:px-8 max-w-2xl lg:max-w-7xl">
-        <div className="max-w-4xl">
-          <p className="font-semibold text-base/7 text-secondary">Sobre Nosotros</p>
-          <h1 className="mt-2 font-semibold text-4xl text-pretty text-primary sm:text-5xl tracking-tight">
+  return (
+    <div className="bg-white py-16 sm:py-24 lg:py-32 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8">
+        {/* Encabezado principal */}
+        <div className="max-w-4xl mx-auto lg:mx-0 text-center lg:text-left">
+          <p className="text-base font-semibold leading-6 text-secondary uppercase tracking-wide">
+            Sobre Nosotros
+          </p>
+          <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
             Más Que Diseño Web, Somos Tu Socio Digital
           </h1>
-          <p className="mt-6 text-balance text-primary text-xl/8">
-            En Nexus Web Studio, nacemos de una simple pero poderosa idea: que ningún negocio cubano con potencial debería ser invisible en la era digital. Combinamos la pasión por la tecnología con un entendimiento profundo de los desafíos y oportunidades únicos de Cuba. Sabemos que una conexión a internet lenta no puede ser una barrera para su crecimiento. Por eso, nos especializamos en crear sitios web increíblemente rápidos, modernos y optimizados que funcionan perfectamente en nuestro contexto, para que sus clientes —especialmente los turistas internacionales— tengan una experiencia impecable desde el primer momento. No solo construimos páginas web; construimos puentes digitales que conectan su talento, su producto o su servicio con el mundo.
+          <p className="mt-6 text-md leading-5 text-gray-600 max-w-3xl">
+            En Nexus Web Studio, nacemos de una simple pero poderosa idea: que ningún negocio cubano con potencial debería ser invisible en la era digital. Combinamos la pasión por la tecnología con un entendimiento profundo de los desafíos y oportunidades únicos de Cuba.
           </p>
         </div>
-        <section className="lg:gap-x-8 lg:gap-y-16 grid grid-cols-1 lg:grid-cols-2 mt-20">
-          <div className="lg:pr-8">
-            <h2 className="font-semibold text-2xl text-gray-900 text-pretty tracking-tight">
-              Nuestra Misión
-            </h2>
-            <p className="mt-6 text-base/7 text-gray-600">
-              <strong>
-                Potenciar el éxito de los negocios a través de soluciones digitales innovadoras y accesibles , especialmente del sector turístico, proporcionándoles las herramientas digitales más modernas, rápidas y efectivas.
-              </strong>
-              <br />
-              Nos dedicamos a romper las barreras de la conectividad y la visibilidad, diseñando sitios web que no solo se vean profesionales, sino que generen clientes y crecimiento tangible.
-            </p>
-            <br />
-            <h3>Nuestros Valores</h3>
-            <p className="mt-8 text-base/7 text-gray-600">
-              <strong>Innovación Adaptada:</strong> Aplicamos soluciones de vanguardia, optimizadas para superar los desafíos tecnológicos únicos de nuestro país.
-              <br />
-              <strong>
-                Confianza Transparente:
-              </strong> Creemos en la honestidad y la claridad. Su éxito es el nuestro, y por eso nos asociamos con usted de manera abierta y confiable.
-              <br />
-              <strong>
-                Compromiso con Resultados: 
-              </strong> No nos conformamos con un diseño bonito; nos obsesionamos con que su sitio web cumpla su objetivo final: atraer más clientes.
-            </p>
-          </div>
-          <div className="lg:row-span-2 lg:-mr-16 xl:mr-auto pt-16">
-            <div className="gap-4 lg:gap-4 xl:gap-8 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 -mx-8 sm:-mx-16 lg:mx-0">
-              <div className="shadow-xl rounded-xl overflow-hidden -outline-offset-1 aspect-square outline outline-1 outline-black/10">
-                <img alt="" src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?&auto=format&fit=crop&crop=center&w=560&h=560&q=90" className="block object-cover size-full" />
-              </div>
-              <div className="shadow-xl -mt-8 lg:-mt-40 rounded-xl overflow-hidden -outline-offset-1 aspect-square outline outline-1 outline-black/10">
-                <img alt="" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?&auto=format&fit=crop&crop=left&w=560&h=560&q=90" className="block object-cover size-full" />
-              </div>
-              <div className="shadow-xl rounded-xl overflow-hidden -outline-offset-1 aspect-square outline outline-1 outline-black/10">
-                <img alt="" src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?&auto=format&fit=crop&crop=left&w=560&h=560&q=90" className="block object-cover size-full" />
-              </div>
-              <div className="shadow-xl -mt-8 lg:-mt-40 rounded-xl overflow-hidden -outline-offset-1 aspect-square outline outline-1 outline-black/10">
-                <img alt="" src="https://images.unsplash.com/photo-1598257006458-087169a1f08d?&auto=format&fit=crop&crop=center&w=560&h=560&q=90" className="block object-cover size-full" />
+
+        {/* Contenido principal con grid */}
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Columna izquierda: Misión y Valores */}
+          <div className="space-y-12">
+            {/* Misión */}
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+                Nuestra Misión
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                <strong className="text-gray-900">
+                  Potenciar el éxito de los negocios a través de soluciones digitales innovadoras y accesibles, especialmente del sector turístico, proporcionándoles las herramientas digitales más modernas, rápidas y efectivas.
+                </strong>
+                <br /><br />
+                Nos dedicamos a romper las barreras de la conectividad y la visibilidad, diseñando sitios web que no solo se vean profesionales, sino que generen clientes y crecimiento tangible.
+              </p>
+            </div>
+
+            {/* Valores */}
+            <div>
+              <h3 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
+                Nuestros Valores
+              </h3>
+              <div className="mt-6 space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900">Innovación Adaptada</h4>
+                  <p className="mt-2 text-base leading-7 text-gray-600">
+                    Aplicamos soluciones de vanguardia, optimizadas para superar los desafíos tecnológicos únicos de nuestro país.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900">Confianza Transparente</h4>
+                  <p className="mt-2 text-base leading-7 text-gray-600">
+                    Creemos en la honestidad y la claridad. Su éxito es el nuestro, y por eso nos asociamos con usted de manera abierta y confiable.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900">Compromiso con Resultados</h4>
+                  <p className="mt-2 text-base leading-7 text-gray-600">
+                    No nos conformamos con un diseño bonito; nos obsesionamos con que su sitio web cumpla su objetivo final: atraer más clientes.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div className="lg:col-span-1 max-lg:mt-16">
-            <p className="font-semibold text-base/7 text-gray-500">
+
+          {/* Columna derecha: Grid de imágenes */}
+          <div className="lg:pl-8">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              <div className="overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
+                <img
+                  alt="Trabajo de diseño web"
+                  src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?auto=format&fit=crop&crop=center&w=560&h=560&q=80"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl shadow-lg mt-8 lg:mt-16 transition-transform duration-300 hover:scale-105">
+                <img
+                  alt="Clientes satisfechos"
+                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&crop=left&w=560&h=560&q=80"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
+                <img
+                  alt="Estrategia digital"
+                  src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&crop=left&w=560&h=560&q=80"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl shadow-lg mt-8 lg:mt-16 transition-transform duration-300 hover:scale-105">
+                <img
+                  alt="Resultados comprobados"
+                  src="https://images.unsplash.com/photo-1598257006458-087169a1f08d?auto=format&fit=crop&crop=center&w=560&h=560&q=80"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Logros en cifras */}
+        <div className="mt-20 lg:mt-24">
+          <div className="bg-gradient-to-tr from-gray-950  to-secondary to-95% rounded-2xl p-8 sm:p-12 lg:p-16">
+            <p className="text-xl font-bold leading-7 text-zinc-950 text-center uppercase tracking-wide">
               Nuestros Logros en Cifras
             </p>
-            <hr className="border-gray-200 mt-6 border-t" />
-            <dl className="gap-x-8 gap-y-4 grid grid-cols-1 sm:grid-cols-2 mt-6">
-              <div className="flex flex-col gap-y-2 border-gray-200 pb-4 border-b border-dotted">
-                <dt className="text-gray-600 text-sm/6">
-                  Incremento de ingresos totales generados para nuestras clientes.
-                </dt>
-                <dd className="order-first font-semibold text-6xl tracking-tight">
-                  $<span>250</span>M+
-                </dd>
+            
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl sm:text-5xl font-bold text-secondary">$?</div>
+                <p className="mt-2 text-sm font-medium text-gray-200">
+                  Incremento de ingresos totales generados para nuestros clientes
+                </p>
               </div>
-              <div className="flex flex-col gap-y-2 border-gray-200 pb-4 border-b border-dotted">
-                <dt className="text-gray-600 text-sm/6">
-                  Negocios que confían en nosotras.
-                </dt>
-                <dd className="order-first font-semibold text-6xl tracking-tight">
-                  <span>50</span>K
-                </dd>
+              
+              <div className="text-center">
+                <div className="text-4xl sm:text-5xl font-bold text-secondary">?</div>
+                <p className="mt-2 text-sm font-medium text-gray-200">
+                  Negocios que confían en nosotros
+                </p>
               </div>
-              <div className="flex flex-col gap-y-2 max-sm:border-gray-200 max-sm:pb-4 max-sm:border-b max-sm:border-dotted">
-                <dt className="text-gray-600 text-sm/6">
-                  Campañas de marketing gestionadas.
-                </dt>
-                <dd className="order-first font-semibold text-6xl tracking-tight">
-                  <span>3</span>M+
-                </dd>
+              
+              <div className="text-center">
+                <div className="text-4xl sm:text-5xl font-bold text-secondary">?</div>
+                <p className="mt-2 text-sm font-medium text-gray-200">
+                  Campañas de marketing gestionadas
+                </p>
               </div>
-              <div className="flex flex-col gap-y-2">
-                <dt className="text-gray-600 text-sm/6">
+              
+              <div className="text-center">
+                <div className="text-4xl sm:text-5xl font-bold text-secondary">?</div>
+                <p className="mt-2 text-sm font-medium text-gray-200">
                   Clientes generados a través de nuestros servicios
-                </dt>
-                <dd className="order-first font-semibold text-6xl tracking-tight">
-                  <span>500</span>M+
-                </dd>
+                </p>
               </div>
-            </dl>
+            </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>;
+    </div>
+  );
 }
