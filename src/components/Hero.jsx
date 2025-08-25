@@ -1,34 +1,44 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel, Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/react'
 import {
-  PuzzlePieceIcon,
   Bars3Icon,
   Cog8ToothIcon,
-  ArrowTrendingUpIcon,
+  BriefcaseIcon,
   XMarkIcon,
+  StarIcon,
+  Cog6ToothIcon,
+  DocumentTextIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import logo from '../assets/icons/logo-2.png'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 const products = [
+  
   {
-    name: "Presencia Web Profecional",
-    description: "Atrae clientes las 24 horas con tu vitrina digital.",
-    href: '/analytics',
-    icon: PuzzlePieceIcon
-  },
-  {
-    name: "Mantenimiento Web Sin Preocupaciones",
-    description: "Nos encargamos de que todo funcione perfectamente, tú concéntrate en tu negocio.",
-    href: "/engagement",
-    icon: Cog8ToothIcon
-  },
-  {
-    name: "Posicionamiento en Google (SEO)",
+    name: "Plan Clásico",
     description: "Haz que los turistas te encuentren primero cuando busquen en La Habana o Cuba.",
     href: "/security",
-    icon: ArrowTrendingUpIcon
+    icon: BriefcaseIcon
+  },
+    {
+    name: "Plan Avanzado",
+    description: "Lleva tu negocio al siguiente nivel con nuestro plan avanzado de marketing digital.",
+    href: "/automation",
+    icon: Cog6ToothIcon
+  },
+
+  {
+    name: "Plan Premium",
+    description: "Maximiza tu visibilidad en línea y atrae más clientes potenciales con nuestro plan premium.",
+    href: "/integration",
+    icon: StarIcon
+  },
+  {
+    name: "Google My Business",
+    description: "Aparece en Google Maps y en las búsquedas locales para atraer más clientes.",
+    href: "/analytics",
+    icon:DocumentTextIcon
   },
   
 ];
@@ -269,7 +279,7 @@ export function Hero() {
               initial={{opacity:0, y: -40}}
               animate={{opacity:1, y:0 }}
               transition={{duration:1, delay: 1, ease:"easeInOut"}}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start sm:gap-4 gap-2 md:gap-6">
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start sm:gap-4 gap-3 md:gap-6">
                 <Link to="../App.jsx" className="bg-secondary hover:bg-textH shadow-sm px-5 sm:py-3 py-2 rounded-md font-bold text-white transition-colors duration-150 ease-linear focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-textH w-full sm:w-auto text-center">
                   Empieza Hoy
                 </Link>

@@ -5,7 +5,6 @@ import App from './App.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {Nav} from './components/Hero.jsx'
 import Analytics from './pages/analytics/analytics.jsx'
-import Engagement from './pages/engagement/engagement.jsx'
 import Security from './pages/security/security.jsx'
 import Integration from './pages/integration/integration.jsx'
 import Automation from './pages/automation/automation.jsx'
@@ -19,7 +18,6 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/analytics" element={<Analytics />} />
-        <Route path="/engagement" element={<Engagement />} />
         <Route path="/security" element={<Security />} />
         <Route path="/integration" element={<Integration />} />
         <Route path="/automation" element={<Automation />} />

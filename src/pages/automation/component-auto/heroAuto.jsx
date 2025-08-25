@@ -18,10 +18,10 @@ export default function HeroAuto() {
       </div>
       <div className="relative mx-auto lg:px-8 py-24 sm:py-32 lg:py-40 max-w-7xl">
         <div className="md:ml-auto pr-6 lg:pr-0 pl-6 md:pl-16 lg:pl-24 xl:pl-32 md:w-2/3 lg:w-1/2">
-          <h2 className="font-semibold text-base/7 text-secondary">
-            Expert Support, Anytime You Need It
+          <h2 className="text-4xl w-2/3 text-center p-3 rounded-md shadow-lg font-serif font-semibold text-white bg-secondary">
+            Plan Avanzado
           </h2>
-          <p className="mt-2 font-semibold text-4xl text-white sm:text-5xl tracking-tight">
+          <p className="mt-10 font-semibold text-4xl text-white sm:text-5xl tracking-tight">
             We’re here to help you scale smarter
           </p>
           <p className="mt-6 text-base/7 text-text">

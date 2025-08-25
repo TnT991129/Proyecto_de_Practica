@@ -6,27 +6,24 @@ import { CheckIcon, XMarkIcon as XMarkIconMini } from '@heroicons/react/20/solid
 import { CTASection } from '../../../components/Body'
 
 const pricing = {
-  frequencies: [
-    { value: 'monthly', label: 'Monthly' },
-    { value: 'annually', label: 'Annually' },
-  ],
+  
   tiers: [
     {
-      name: 'Presencia Digital',
+      name: 'Plan Clásico',
       id: 'tier-starter',
       href: '#',
       featured: false,
       description: 'Personas que están comenzando, con presupuesto limitado, pero que necesitan una vitrina básica en internet.',
-      price: { unique: '$100 - $150' },
-      highlights: ['Diseño web estático (5 secciones máx: Inicio, Servicios, Galería, Sobre mí, Contacto).',  'Diseño 100% adaptable (Mobile-First).', 'Hosting incluido por 1 año en servidor básico (o subdominio gratis en vercel.netlify.app).', 'Formulario de contacto que llega a email/WhatsApp.', 'Optimización básica de velocidad.'],
+      price: { unique: '$150-$200' },
+      highlights: ['Página web de 3‑4 secciones (Inicio, Habitaciones, Contacto, Servicios)',  'Galería de fotos optimizada', 'Posicionamiento en Google Maps', 'Traduccion de idiomas ( Ingles + Español )', 'Optimización básica de velocidad.'],
     },
     {
-      name: 'Growth',
+      name: 'Plan Avanzado',
       id: 'tier-scale',
       href: '#',
       featured: true,
-      description: 'DPaladares, casas particulares, bares. Que ya tienen clientes pero quieren escalar.',
-      price: { unique: '$300 - $500' },
+      description: 'Paladares, casas particulares, bares. Que ya tienen clientes pero quieren escalar.',
+      price: { unique: '$280 - $380' },
       highlights: [
         'Diseño web personalizado y único (HTML/CSS/JS o React) para máx. velocidad.',
         '7 secciones (Las básicas + Blog/Noticias + Testimonios).',
@@ -38,12 +35,12 @@ const pricing = {
       ],
     },
     {
-      name: 'Enterprise',
+      name: 'Plan Premium',
       id: 'tier-growth',
       href: '#',
       featured: false,
       description: 'Hoteles pequeños, restaurantes de lujo, productores que quieren vender online.',
-      price: {unique: '$800 - $1500'},
+      price: {unique: '$550 - $750'},
       highlights: ['Diseño web a medida y complejo (con animaciones, interacciones).', 'Sistema de Reservas Online integrado (calendario, confirmación).', 'Tienda Online (E-commerce) para venta de productos/servicios.', 'Blog integrado para contenido marketing.', 'SEO Avanzado (Investigación de keywords, estructura optimizada).', 'Panel de administración COMPLETO (CMS como WordPress o Strapi para total control).', "Mantenimiento y Soporte técnico por 3 meses incluido."],
     },
   ],

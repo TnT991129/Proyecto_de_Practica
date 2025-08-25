@@ -5,8 +5,7 @@ export function HeroSec() {
       <div className="lg:gap-x-8 lg:grid lg:grid-cols-12 mx-auto lg:px-8 max-w-7xl">
         <div className="lg:col-span-7 xl:col-span-6 px-6 lg:px-0 pt-10 lg:pt-40 pb-24 sm:pb-32 lg:pb-48">
           <div className="mx-auto lg:mx-0 max-w-lg">
-            <img alt="Your Company" src={logo} className="h-11" />
-
+            <h1 className="text-4xl w-1/2 text-center p-3 rounded-md shadow-lg font-serif font-semibold text-white bg-secondary">Plan Clásico</h1>
             <h1 className="mt-24 sm:mt-10 font-semibold text-5xl text-gray-900 text-pretty sm:text-7xl tracking-tight">
               Boost Your Digital Business with Stripe
             </h1>

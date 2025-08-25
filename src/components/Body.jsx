@@ -195,7 +195,7 @@ export function LogoClouds() {
           <rect fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" width="100%" height="100%" strokeWidth={0} />
         </svg>
       {/* Encabezado */}
-      <div className="text-center mb-10 sm:mb-12 lg:mb-16 px-6">
+      <div className="text-center mb-10 sm:mb-12 lg:mb-16 px-4">
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white">
           Trabajamos con todo tipo de negocios
         </h2>
@@ -215,7 +215,7 @@ export function LogoClouds() {
       >
         <div 
           className="flex w-max"
-          style={{ animation: `scroll 120s linear infinite`, animationPlayState: isPaused ? 'paused' : 'running' }}
+          style={{ animation: `scroll 90s linear infinite`, animationPlayState: isPaused ? 'paused' : 'running' }}
         >
           {items.map((item, idx) => (
             <div
@@ -251,7 +251,7 @@ export function LogoClouds() {
 const people = [
   {
     name: "Osmel Rubido",
-    role: "CEO & Founder and Frontend Developer",
+    role: "Frontend Developer",
     imageUrl:
       Yo,
     xUrl: "#",
@@ -342,7 +342,7 @@ Nuestra visión es clara: utilizar la innovación adaptada para superar los desa
 export function OurMision() {
   return (
     <div className="bg-white py-16 sm:py-24 lg:py-32 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Encabezado principal */}
         <div className="max-w-4xl mx-auto lg:mx-0 text-center lg:text-left">
           <p className="text-base font-semibold leading-6 text-secondary uppercase tracking-wide">
